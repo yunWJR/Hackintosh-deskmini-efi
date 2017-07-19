@@ -167,15 +167,6 @@
 			<false/>
 			<key>Debug</key>
 			<false/>
-			<key>Fixes</key>
-			<dict>
-				<key>AddDTGP_0001</key>
-				<true/>
-				<key>FixHDA_8000</key>
-				<true/>
-				<key>FixShutdown_0004</key>
-				<true/>
-			</dict>
 			<key>Patches</key>
 			<array>
 				<dict>
@@ -350,8 +341,6 @@
 			<key>ReuseFFFF</key>
 			<false/>
 		</dict>
-		<key>HaltEnabler</key>
-		<true/>
 		<key>SSDT</key>
 		<dict>
 			<key>#C3Latency</key>
@@ -416,6 +405,8 @@
 		<string>boot.efi</string>
 		<key>DefaultVolume</key>
 		<string>LastBootedVolume</string>
+		<key>NeverHibernate</key>
+		<true/>
 		<key>Timeout</key>
 		<integer>3</integer>
 		<key>XMPDetection</key>
@@ -477,8 +468,6 @@
 		<dict>
 			<key>#ResetHDA</key>
 			<false/>
-			<key>Inject</key>
-			<string>66</string>
 		</dict>
 		<key>FakeID</key>
 		<dict>
@@ -741,25 +730,6 @@
 		<true/>
 		<key>KernelPm</key>
 		<true/>
-		<key>KernelToPatch</key>
-		<array>
-			<dict>
-				<key>Comment</key>
-				<string>msr 0xe2 _xcpm_idle instant reboot</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				ILniAAAADzA=
-				</data>
-				<key>MatchOS</key>
-				<string>10.12</string>
-				<key>Replace</key>
-				<data>
-				ILniAAAAkJA=
-				</data>
-			</dict>
-		</array>
 		<key>KextsToPatch</key>
 		<array>
 			<dict>
@@ -1148,7 +1118,7 @@
 				<key>Comment</key>
 				<string>change 15 port limit to 30 in AppleUSBXHCIPCI</string>
 				<key>Disabled</key>
-				<true/>
+				<false/>
 				<key>Find</key>
 				<data>
 				g72M/v//EA==
@@ -1158,20 +1128,6 @@
 				<key>Replace</key>
 				<data>
 				g72M/v//Hw==
-				</data>
-			</dict>
-			<dict>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				ugUAAAA=
-				</data>
-				<key>Name</key>
-				<string>AppleGraphicsDevicePolicy</string>
-				<key>Replace</key>
-				<data>
-				ugAAAAA=
 				</data>
 			</dict>
 		</array>
@@ -1239,9 +1195,7 @@
 		<key>#NvidiaWeb</key>
 		<false/>
 		<key>InjectKexts</key>
-		<string>Yes</string>
-		<key>InjectSystemID</key>
-		<true/>
+		<string>Detect</string>
 	</dict>
 </dict>
 </plist>
