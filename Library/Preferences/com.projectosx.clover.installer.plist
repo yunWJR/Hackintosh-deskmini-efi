@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CloverRevision</key>
+	<integer>4259</integer>
+	<key>InstalledThemes</key>
+	<array>
+		<string>embedded</string>
+		<string>random</string>
+	</array>
+	<key>org.clover.bootloader.bootno</key>
+	<true/>
+	<key>org.clover.cloverefi.64.sata</key>
+	<true/>
+</dict>
+</plist>

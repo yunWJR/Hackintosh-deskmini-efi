@@ -392,11 +392,6 @@
 			<key>PluginType</key>
 			<string>1</string>
 		</dict>
-		<key>SortedOrder</key>
-		<array>
-			<string>ssdt_cpu.aml</string>
-			<string>SSDT-USB-DESKMINI.aml</string>
-		</array>
 	</dict>
 	<key>Boot</key>
 	<dict>
@@ -409,7 +404,7 @@
 		<key>#XMPDetection</key>
 		<string>-1</string>
 		<key>Arguments</key>
-		<string>dart=0 darkwake=8 nv_disable=1 -gux_defer_usb2 kext-dev-mode=1</string>
+		<string>dart=0 darkwake=8 nv_disable=1 -gux_defer_usb2 kext-dev-mode=1 -disablegfxfirmware</string>
 		<key>Debug</key>
 		<false/>
 		<key>DefaultLoader</key>
@@ -458,21 +453,6 @@
 		<string>7a00000001000000010000006e0000000200000002010c00d041030a0000000001010600001b7fff040028000000500069006e0043006f006e00660069006700750072006100740069006f006e00730000000800000001080100180000006c00610079006f00750074002d00690064000000080000000c000000</string>
 		<key>#SetIntelBacklight</key>
 		<false/>
-		<key>AddProperties</key>
-		<array>
-			<dict>
-				<key>Device</key>
-				<string>IntelGFX</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Key</key>
-				<string>AAPL,GfxYTile</string>
-				<key>Value</key>
-				<data>
-				AQAAAA==
-				</data>
-			</dict>
-		</array>
 		<key>Audio</key>
 		<dict>
 			<key>#ResetHDA</key>
@@ -496,8 +476,6 @@
 			<string>0x431214e4</string>
 			<key>#XHCI</key>
 			<string>0x0</string>
-			<key>IntelGFX</key>
-			<string>0x19168086</string>
 		</dict>
 		<key>USB</key>
 		<dict>
@@ -508,6 +486,8 @@
 			<key>Inject</key>
 			<true/>
 		</dict>
+		<key>UseIntelHDMI</key>
+		<true/>
 	</dict>
 	<key>GUI</key>
 	<dict>
@@ -645,7 +625,7 @@
 		<key>ScreenResolution</key>
 		<string>1920x1080</string>
 		<key>Theme</key>
-		<string>BGM</string>
+		<string>Space</string>
 	</dict>
 	<key>Graphics</key>
 	<dict>
@@ -689,12 +669,10 @@
 			<key>ATI</key>
 			<false/>
 			<key>Intel</key>
-			<true/>
+			<false/>
 			<key>NVidia</key>
 			<false/>
 		</dict>
-		<key>ig-platform-id</key>
-		<string>0x19160000</string>
 	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>
@@ -723,19 +701,15 @@
 				</data>
 			</dict>
 		</array>
-		<key>AppleRTC</key>
+		<key>AppleIntelCPUPM</key>
 		<true/>
-		<key>AsusAICPUPM</key>
+		<key>AppleRTC</key>
 		<true/>
 		<key>Debug</key>
 		<false/>
 		<key>DellSMBIOSPatch</key>
 		<false/>
-		<key>FakeCPUID</key>
-		<string>0x0506E3</string>
 		<key>KernelCpu</key>
-		<false/>
-		<key>KernelHaswellE</key>
 		<false/>
 		<key>KernelLapic</key>
 		<true/>
@@ -760,8 +734,188 @@
 				</data>
 			</dict>
 		</array>
+		<key>KernelXCPM</key>
+		<false/>
 		<key>KextsToPatch</key>
 		<array>
+			<dict>
+				<key>Comment</key>
+				<string>10.12-BCM94352-fvco-darkvoid</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				gflSqgAAdSk=
+				</data>
+				<key>Name</key>
+				<string>AirPortBrcm4360</string>
+				<key>Replace</key>
+				<data>
+				gflSqgAAZpA=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>10.11+-BCM94352-5GHz-US-FCC-darkvoid</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				QYP8/3QsSA==
+				</data>
+				<key>Name</key>
+				<string>AirPortBrcm4360</string>
+				<key>Replace</key>
+				<data>
+				ZscGVVPrKw==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>10.11+-BCM94352-Airport-Extreme-skvo</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				axAAAHUN
+				</data>
+				<key>Name</key>
+				<string>AirPortBrcm4360</string>
+				<key>Replace</key>
+				<data>
+				axAAAJCQ
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>10.11+-BT4LE-Handoff-Hotspot-lisai9093</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				SIX/dEdIiwc=
+				</data>
+				<key>Name</key>
+				<string>IOBluetoothFamily</string>
+				<key>Replace</key>
+				<data>
+				Qb4PAAAA60Q=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>10.12-BCM94352-0x43b114e4-Info.plist-bpresles</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				PHN0cmluZz5wY2kxNGU0LDQzYmE8L3N0cmluZz4=
+				</data>
+				<key>InfoPlistPatch</key>
+				<true/>
+				<key>Name</key>
+				<string>AirPortBrcm4360</string>
+				<key>Replace</key>
+				<data>
+				PHN0cmluZz5wY2kxNGU0LDQzYjE8L3N0cmluZz4=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>10.11-BCM94352-CC=#a-Ramalama</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				QYP8/3QsSA==
+				</data>
+				<key>Name</key>
+				<string>AirPortBrcm4360</string>
+				<key>Replace</key>
+				<data>
+				ZscGI2HrKw==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>10.11+-BCM94352-Whitelest-0x4331-iMac14,3-skvo</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				TWFjLUM2RUZBNjM5NjJGQzZFQTA=
+				</data>
+				<key>Name</key>
+				<string>AirPortBrcm4360</string>
+				<key>Replace</key>
+				<data>
+				TWFjLTI3QURCQjdCNENFRThFNjE=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>10.11+-BCM94352-Whitelest-0x4353-MacBoolAir5,2-skvo</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				TWFjLUM2RUZBNjM5NjJGQzZFQTA=
+				</data>
+				<key>Name</key>
+				<string>AirPortBrcm4360</string>
+				<key>Replace</key>
+				<data>
+				TWFjLTI3QURCQjdCNENFRThFNjE=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>10.10-BCM94352-5GHz-US-FCC-dv</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				QYP8/3QsSA==
+				</data>
+				<key>Name</key>
+				<string>AirPortBrcm4360</string>
+				<key>Replace</key>
+				<data>
+				ZscGVVPrKw==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>10.9-BCM94352-5 GHz</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				AVhU
+				</data>
+				<key>Name</key>
+				<string>AirPortBrcm4360</string>
+				<key>Replace</key>
+				<data>
+				AVhY
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>AirPortBrcm4360 whitelist patch (board-id), 10.12.dp1, credit RehabMan</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				MdtMO33YdRI=
+				</data>
+				<key>Name</key>
+				<string>AirPortBrcm4360</string>
+				<key>Replace</key>
+				<data>
+				Mdv/w5CQkJA=
+				</data>
+			</dict>
 			<dict>
 				<key>Comment</key>
 				<string>IONVMeFamily Pike R. Alpha Patch#1</string>
@@ -1005,34 +1159,6 @@
 				</data>
 			</dict>
 			<dict>
-				<key>Disabled</key>
-				<true/>
-				<key>Find</key>
-				<data>
-				SGVhZHBob25lcwA=
-				</data>
-				<key>Name</key>
-				<string>VoodooHDA</string>
-				<key>Replace</key>
-				<data>
-				VGVsZXBob25lcwA=
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Patch_to_not_load_this_driver</string>
-				<key>Disabled</key>
-				<true/>
-				<key>Find</key>
-				<string>0x04020000</string>
-				<key>InfoPlistPatch</key>
-				<true/>
-				<key>Name</key>
-				<string>AppleHDAController</string>
-				<key>Replace</key>
-				<string>0x44220000</string>
-			</dict>
-			<dict>
 				<key>Comment</key>
 				<string>Make all drives to be internal</string>
 				<key>Disabled</key>
@@ -1062,54 +1188,6 @@
 				<key>Replace</key>
 				<data>
 				AAAAAAAAAAAAAA==
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>AirPortBrcm4360 whitelist patch (board-id), 10.12.dp1, credit RehabMan</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				MdtMO33YdRI=
-				</data>
-				<key>Name</key>
-				<string>AirPortBrcm4360</string>
-				<key>Replace</key>
-				<data>
-				Mdv/w5CQkJA=
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>AirPortBrcm4360 - fcvo, 10.12.x</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				gflSqgAAdSk=
-				</data>
-				<key>Name</key>
-				<string>AirPortBrcm4360</string>
-				<key>Replace</key>
-				<data>
-				gflSqgAAZpA=
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>0x19160000/etc, 19MB framebuffer 9MB cursor bytes (credit RehabMan)</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				AAAgAgAAUAE=
-				</data>
-				<key>Name</key>
-				<string>com.apple.driver.AppleIntelSKLGraphicsFramebuffer</string>
-				<key>Replace</key>
-				<data>
-				AAAwAQAAkAA=
 				</data>
 			</dict>
 			<dict>
@@ -1146,32 +1224,18 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>change 15 port limit to 30 in AppleUSBXHCIPCI</string>
-				<key>Disabled</key>
-				<true/>
-				<key>Find</key>
-				<data>
-				g72M/v//EA==
-				</data>
-				<key>Name</key>
-				<string>AppleUSBXHCIPCI</string>
-				<key>Replace</key>
-				<data>
-				g72M/v//Hw==
-				</data>
-			</dict>
-			<dict>
+				<string>HDMI</string>
 				<key>Disabled</key>
 				<false/>
 				<key>Find</key>
 				<data>
-				ugUAAAA=
+				AAQAAIcBAAACBAoAAAQAAA==
 				</data>
 				<key>Name</key>
-				<string>AppleGraphicsDevicePolicy</string>
+				<string>ASGFB</string>
 				<key>Replace</key>
 				<data>
-				ugAAAAA=
+				BAAAAIcBAAACBAoAAAgAAA==
 				</data>
 			</dict>
 		</array>
@@ -1192,27 +1256,35 @@
 		<key>#BoardSerialNumber</key>
 		<string>C0200000000000000</string>
 		<key>BiosReleaseDate</key>
-		<string>12/22/2016</string>
+		<string>08/08/2017</string>
 		<key>BiosVendor</key>
 		<string>Apple Inc.</string>
 		<key>BiosVersion</key>
-		<string>IM171.88Z.0105.B15.1612221002</string>
+		<string>IM183.88Z.0151.B00.1708080034</string>
 		<key>Board-ID</key>
-		<string>Mac-B809C3757DA9BB8D</string>
+		<string>Mac-77F17D7DA9285301</string>
 		<key>BoardAssetTag</key>
 		<string>Base Board Asset Tag#</string>
 		<key>BoardManufacturer</key>
 		<string>Apple Inc.</string>
+		<key>BoardSerialNumber</key>
+		<string>C02736310QXF5058C</string>
 		<key>BoardType</key>
 		<integer>10</integer>
+		<key>BoardVersion</key>
+		<string>iMac18,2</string>
 		<key>ChassisAssetTag</key>
 		<string>iMac-Aluminum</string>
 		<key>ChassisManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>ChassisType</key>
-		<string>0x13</string>
+		<string>0x09</string>
 		<key>Family</key>
 		<string>iMac</string>
+		<key>FirmwareFeatures</key>
+		<string>0xFC0FE136</string>
+		<key>FirmwareFeaturesMask</key>
+		<string>0xFF1FFF3F</string>
 		<key>FirmwareVendor</key>
 		<string>Apple Inc.</string>
 		<key>LocationInChassis</key>
@@ -1221,10 +1293,12 @@
 		<string>Apple Inc.</string>
 		<key>Mobile</key>
 		<false/>
+		<key>PlatformFeature</key>
+		<string>0x00</string>
 		<key>ProductName</key>
-		<string>iMac17,1</string>
+		<string>iMac18,2</string>
 		<key>SerialNumber</key>
-		<string>C02P47V6H2YQ</string>
+		<string>C02VC1JMJ1G5</string>
 		<key>SmcRevision</key>
 		<string>2.33f9</string>
 		<key>Version</key>
@@ -1239,7 +1313,7 @@
 		<key>#NvidiaWeb</key>
 		<false/>
 		<key>InjectKexts</key>
-		<string>Yes</string>
+		<string>Detect</string>
 		<key>InjectSystemID</key>
 		<true/>
 	</dict>

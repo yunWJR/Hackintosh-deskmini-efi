@@ -1,6 +1,6 @@
 
-Clover EFI installer log - Mon Jun 19 15:25:23 CST 2017
-Installer version: v2.4k r4091 EFI bootloader
+Clover EFI installer log - Thu Oct 26 08:29:45 CST 2017
+Installer version: v2.4k r4259 EFI bootloader
 ======================================================
 /dev/disk0 (internal):
    #:                       TYPE NAME                    SIZE       IDENTIFIER
@@ -17,11 +17,12 @@ Installer version: v2.4k r4091 EFI bootloader
    1:                        EFI SYSTEM_DRV              272.6 MB   disk1s1
    2:         Microsoft Reserved                         16.8 MB    disk1s2
    3:       Microsoft Basic Data Windows                 107.4 GB   disk1s3
-   4:       Microsoft Basic Data LENOVO                  869.0 GB   disk1s4
-   5:       Microsoft Basic Data EFI_WIN                 208.7 MB   disk1s5
-   6:           Windows Recovery                         1.0 GB     disk1s6
-   7:           Windows Recovery                         21.2 GB    disk1s7
-   8: BFBFAFE7-A34F-448A-9A5B-6213EB736C22               1.0 GB     disk1s8
+   4:       Microsoft Basic Data LENOVO                  554.5 GB   disk1s4
+   5:                  Apple_HFS mac_back                314.4 GB   disk1s5
+   6:       Microsoft Basic Data EFI_WIN                 208.7 MB   disk1s6
+   7:           Windows Recovery                         1.0 GB     disk1s7
+   8:           Windows Recovery                         21.2 GB    disk1s8
+   9: BFBFAFE7-A34F-448A-9A5B-6213EB736C22               1.0 GB     disk1s9
 
 ======================================================
 Backing up EFI files
@@ -29,9 +30,9 @@ Backing up EFI files
 ======================================================
 Installing BootSectors/BootLoader
 
-Stage 0 - Don't write any of boot0af, boot0md, boot0ss to /Volumes/MAC_EFI
-Stage 1 - Don't write any of boot1h2, boot1f32alt, boot1xalt to /Volumes/MAC_EFI
-Stage 2 - Written boot6 (x64) to /Volumes/MAC_EFI/boot
+Stage 0 - Don't write any of boot0af, boot0md, boot0ss to /Volumes/EFI_WIN
+Stage 1 - Don't write any of boot1h2, boot1f32alt, boot1xalt to /Volumes/EFI_WIN
+Stage 2 - Written boot6 (x64) to /Volumes/EFI_WIN/boot
 
 Theme 'metal' (defined in config.plist) not found !
 Using default theme 'embedded'
