@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CloverRevision</key>
-	<integer>4259</integer>
+	<integer>4318</integer>
 	<key>InstalledThemes</key>
 	<array>
 		<string>embedded</string>
@@ -12,6 +12,10 @@
 	<key>org.clover.bootloader.bootno</key>
 	<true/>
 	<key>org.clover.cloverefi.64.sata</key>
+	<true/>
+	<key>org.clover.special.themes.christmas</key>
+	<true/>
+	<key>org.clover.special.themes.newyear</key>
 	<true/>
 </dict>
 </plist>

@@ -1,14 +1,14 @@
 
-Clover EFI installer log - Thu Oct 26 08:29:45 CST 2017
-Installer version: v2.4k r4259 EFI bootloader
+Clover EFI installer log - Fri Dec  1 12:57:06 CST 2017
+Installer version: v2.4k r4318 EFI bootloader
 ======================================================
 /dev/disk0 (internal):
    #:                       TYPE NAME                    SIZE       IDENTIFIER
    0:      GUID_partition_scheme                         240.1 GB   disk0
    1:                        EFI EFI                     209.7 MB   disk0s1
-   2:                  Apple_HFS mac                     119.3 GB   disk0s2
+   2:                  Apple_HFS mac                     189.5 GB   disk0s2
    3:                 Apple_Boot Recovery HD             650.0 MB   disk0s3
-   4:                  Apple_HFS mac_data                119.3 GB   disk0s4
+   4:                  Apple_HFS mac_data                49.2 GB    disk0s4
    5:       Microsoft Basic Data MAC_EFI                 392.0 MB   disk0s5
 
 /dev/disk1 (internal, physical):

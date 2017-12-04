@@ -169,11 +169,13 @@
 			<false/>
 			<key>Fixes</key>
 			<dict>
-				<key>AddDTGP_0001</key>
+				<key>AddDTGP</key>
 				<true/>
-				<key>FixHDA_8000</key>
+				<key>FixHDA</key>
 				<true/>
-				<key>FixShutdown_0004</key>
+				<key>FixShutdown</key>
+				<true/>
+				<key>FixUSB</key>
 				<true/>
 			</dict>
 			<key>Patches</key>
@@ -404,7 +406,7 @@
 		<key>#XMPDetection</key>
 		<string>-1</string>
 		<key>Arguments</key>
-		<string>dart=0 darkwake=8 nv_disable=1 -gux_defer_usb2 kext-dev-mode=1 -disablegfxfirmware</string>
+		<string>dart=0 darkwake=8 nv_disable=1 -gux_defer_usb2 kext-dev-mode=1 -disablegfxfirmware -igfxbeta -shikibeta -shikigva</string>
 		<key>Debug</key>
 		<false/>
 		<key>DefaultLoader</key>
@@ -483,12 +485,13 @@
 			<true/>
 			<key>FixOwnership</key>
 			<true/>
-			<key>Inject</key>
-			<true/>
 		</dict>
-		<key>UseIntelHDMI</key>
-		<true/>
 	</dict>
+	<key>DisableDrivers</key>
+	<array>
+		<string>VBoxExt4</string>
+		<string>CsmVideoDxe</string>
+	</array>
 	<key>GUI</key>
 	<dict>
 		<key>#ConsoleMode</key>
@@ -625,7 +628,7 @@
 		<key>ScreenResolution</key>
 		<string>1920x1080</string>
 		<key>Theme</key>
-		<string>Space</string>
+		<string>Beauty</string>
 	</dict>
 	<key>Graphics</key>
 	<dict>
