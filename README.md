@@ -1,7 +1,10 @@
 # Hackintosh-deskmini-efi
 
 Deskmini-efi for Hackintosh
+
 > `Now available for 10.12.6、10.13.1`
+
+> EFI2-10.12 兼容10.12的 EFI
 
 ## 更新说明
 
@@ -46,6 +49,10 @@ clover：r4318
 * 双屏输出
 
 #### 更新记录
+2018-11.05
+1. 增加10.12兼容性 EFI，如果原始 EFI 有问题，可以试用兼容 EFI2-10.12
+
+
 2017-12.04
 
 1. 更新 clover
